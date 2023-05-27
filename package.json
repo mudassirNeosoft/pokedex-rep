@@ -1,0 +1,21 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "lerna run --scope pokedex dev ",
+    "bundle:utils": "lerna run --scope @pokedex/utils --stream rollup",
+    "bundle:components":"lerna run --scope @pokedex/components --stream rollup",
+    "bundle":"yarn bundle:utils && yarn bundle:components",
+    "build":"lerna run --parallel build",
+    "bootstrap":"lerna bootstrap"
+  },
+  "devDependencies": {
+    "@types/node": "^20.2.3",
+    "lerna": "^6.6.2"
+  },
+  "dependencies": {
+  }
+}

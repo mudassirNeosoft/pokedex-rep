@@ -1,0 +1,10 @@
+node_modules/
+lerna-debug.log
+npm-debug.log
+packages/*/node_modules
+packages/*/dist
+packages/*/.next
+.idea
+packages/*/node_modules
+packages/*/dist
+packages/*/.next
