@@ -3,15 +3,17 @@
     /* Visit https://aka.ms/tsconfig to read more about this file */
     "skipLibCheck": true /* Skip type checking all .d.ts files. */,
     "jsx": "react",
-    "module": "ESNext",
+    "lib": ["dom", "esnext"],
+    "module": "esnext",
     "declaration": true,
     "declarationDir": "types",
-    "rootDir": "src",
     "sourceMap": true,
     "outDir": "dist",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "emitDeclarationOnly": true
+    "emitDeclarationOnly": true,
+    "esModuleInterop": true,
+    "rootDir": "src"
     // "target": "es2016" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
     // "esModuleInterop": true /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */,
     // "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,
@@ -106,5 +108,6 @@
 
     /* Completeness */
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
-  }
+  },
+  "exclude": ["node_modules"]
 }

@@ -8,10 +8,19 @@ export interface IPokeList {
   previous: string;
   results: IResult[];
 }
-
-export type PokemonData = {
+export type IAbilityProp = {
+  ability: {
+    name: string;
+    url: string;
+  };
+};
+export type IPokemonData = {
+  id:number;
   name: string;
-  height: number;
-  weight: number;
-  location_area_encounters: string;
+  height?: number;
+  weight?: number;
+  location_area_encounters?: string;
+  abilities?: IAbilityProp[];
+  image?:string;
+  
 };

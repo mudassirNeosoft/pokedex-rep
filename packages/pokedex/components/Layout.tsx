@@ -3,7 +3,7 @@ import { TopAppBar } from "@pokedex/components";
 const Layout = ({ children }: PropsWithChildren) => {
   return (
     <>
-      <TopAppBar />
+      <TopAppBar name='Pokedex' />
       {children}
     </>
   );

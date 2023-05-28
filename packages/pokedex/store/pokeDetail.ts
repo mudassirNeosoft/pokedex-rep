@@ -3,9 +3,9 @@ import { AppState, AppThunk } from "./configure";
 import { HYDRATE } from "next-redux-wrapper";
 
 import { fetchPokemoByName } from "@pokedex/utils";
-import { PokemonData } from "../types/index.types";
+import { IPokemonData } from "../types/index.types";
 
-const initialState: { data: PokemonData | null } = { data: null };
+const initialState: { data: IPokemonData | null } = { data: null };
 
 export const pokemonDetailSlice = createSlice({
   name: "pokemonDetail",

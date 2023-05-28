@@ -1,9 +1,10 @@
-import React, { Suspense } from "react";
+import React, { useState } from "react";
 import MuiCard from "@mui/material/Card";
 import {
   Box,
   CardContent,
   CardMedia,
+  CircularProgress,
   List,
   ListItem,
   ListItemText,
@@ -12,17 +13,25 @@ import {
 import { cardProps, IAbilityProp } from "./Card.types";
 
 export const Card = (props: cardProps) => {
+  const [loading, setLoading] = useState<boolean>(true);
+
   return (
     <MuiCard sx={{display:'flex'}}>
-      <Suspense fallback={'...loading'}>
+       {loading && (
+        <Box sx={{width:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}>
+          <CircularProgress />
+          </Box>
+          )}
+
       <CardMedia
         sx={{width:'50%', objectFit:'fill'}}
         component="img"
         image={props.image}
         title={props.name}
         loading="lazy"
+        onLoad={()=>setLoading(false)}
+        onError={()=>setLoading(false)}
       />
-      </Suspense>
       <CardContent>
         <Typography gutterBottom variant="h4" component="div" sx={{textTransform:'capitalize'}}>
           {props.name}

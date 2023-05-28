@@ -44,14 +44,12 @@ const Home: NextPage= () => {
   const count = useSelector(selectPokemonCount);
   const isLoading = useSelector(isLoadingPokemon);
   const paginationModel = useSelector(selectPagination)
-  console.log("🚀 ~ file: index.tsx:48 ~ paginationModel:", paginationModel)
   
   const [pageModel, setPageModel] = useState<IPageModel>({page:0, pageSize:PAGE_SIZE})
   const handleRowClick = (row:any) => {
     router.push(`/${row.row.name}`);
   };
 const handlePaginationChange = async(value:IPageModel)=>{
-  console.log('pageSize',value)
   dispatch(fetchPockeList(value.page+1, value.pageSize))
   dispatch(setPagination({page:value.page, pageSize:value.pageSize}))
 }
@@ -60,7 +58,6 @@ const handlePaginationChange = async(value:IPageModel)=>{
       <DataTable
         rows={pokemonList}
         column={columns}
-        pageSize={1}
         onRowClick={handleRowClick}
         getRowId={(e) => e.name}
         rowCount={count}
@@ -68,7 +65,6 @@ const handlePaginationChange = async(value:IPageModel)=>{
         pageSizeOptions={[]}
         paginationModel={paginationModel}
         paginationModelChange={handlePaginationChange}
-        page={1}
       />
     </div>
   );
@@ -80,7 +76,6 @@ export const getServerSideProps = wrapper.getServerSideProps(
   (store:AppStore) =>
     async ({}) => {
       const paginationModel = store.getState().pokemon.pagination;
-      console.log("🚀 ~ file: index.tsx:84 ~ paginationModel:", paginationModel)
       await store.dispatch(fetchPockeList(paginationModel.page>0?paginationModel.page:1,paginationModel.pageSize))
       return {
         props: {},
