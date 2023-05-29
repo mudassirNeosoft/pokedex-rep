@@ -1,41 +1,18 @@
 import * as React from "react";
 import Home from "../pages/index";
 import "@testing-library/jest-dom";
-import { screen, render, fireEvent, waitFor } from "@testing-library/react";
+import { screen, render, fireEvent } from "@testing-library/react";
 import { Provider } from "react-redux";
 import configureStore from "redux-mock-store";
 import thunk from "redux-thunk";
+import { mockStoreData } from "../utils/mockdata";
 
 jest.mock("next/router", () => require("next-router-mock"));
-const mock_store = {
-  pokemon: {
-    allData: [],
-    data: [
-      {
-        name: "bulbasaur",
-        url: "https://pokeapi.co/api/v2/pokemon/1/",
-      },
-      { name: "ivysaur", url: "https://pokeapi.co/api/v2/pokemon/2/" },
-    ],
-    count: 0,
-    pagination: {
-      page: 0,
-      pageSize: 10,
-    },
-  },
-  pokemonDetail: {
-    name: "Pikachu",
-    height: "100",
-    weight: "250",
-    location_area_encounters: "https://pokeapi.co/api/v2/pokemon/3/encounters",
-  },
-};
 
 const mockStore = configureStore([thunk]);
-const store = mockStore(mock_store);
+const store = mockStore(mockStoreData);
 describe("pokemon-list", () => {
   it("List rendered successfully", () => {
-    const handleRowClick = jest.fn();
     const { container } = render(
       <Provider store={store}>
         <Home />

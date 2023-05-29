@@ -5,20 +5,21 @@
     "packages/*"
   ],
   "scripts": {
-    "bootstrap":"yarn install && lerna bootstrap",
+    "bootstrap": "yarn install && lerna bootstrap",
     "compile:utils": "lerna run --scope @pokedex/utils --stream rollup",
-    "compile:components":"lerna run --scope @pokedex/components --stream rollup",
-    "compile":"yarn compile:utils && yarn compile:components",
+    "compile:components": "lerna run --scope @pokedex/components --stream rollup",
+    "compile": "yarn compile:utils && yarn compile:components",
     "lint": "lerna run lint --stream",
-    "test":"lerna run test --stream --parallel",
+    "test": "lerna run test --stream --parallel",
     "dev": "lerna run --scope pokedex dev ",
-    "build":"yarn compile && lerna run --scope pokedex --stream build",
-    "prod": "lerna run --scope pokedex start "
+    "build": "yarn compile && lerna run --scope pokedex --stream build",
+    "prod": "lerna run --scope pokedex start ",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@types/node": "^20.2.3",
-    "lerna": "^6.6.2"
+    "lerna": "^6.6.2",
+    "husky": "^8.0.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }

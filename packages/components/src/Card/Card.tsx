@@ -45,7 +45,7 @@ export const Card = (props: cardProps) => {
           </Typography>
         </Box>
         <Typography variant="body2" color="text.secondary" sx={{display:'flex', flexDiretion:'column'}}>
-          Location
+          Location:
           <a href={props.location} target="_blank" rel="noreffer">
             {props.location}
           </a>

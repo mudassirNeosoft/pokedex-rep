@@ -10,7 +10,7 @@ exports[`pokemon-list List rendered successfully 1`] = `
         aria-colcount="2"
         aria-multiselectable="false"
         aria-rowcount="3"
-        class="MuiDataGrid-root MuiDataGrid-root--densityStandard MuiDataGrid-withBorderColor css-12u49z-MuiDataGrid-root"
+        class="MuiDataGrid-root MuiDataGrid-root--densityStandard MuiDataGrid-withBorderColor css-1687jxh-MuiDataGrid-root"
         role="grid"
       >
         <div

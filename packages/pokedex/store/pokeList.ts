@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice, Dispatch } from "@reduxjs/toolkit";
-import { AppState, AppThunk } from "./configure";
+import { AppState } from "./configure";
 import { HYDRATE } from "next-redux-wrapper";
 import { fetchPokemonList } from "@pokedex/utils";
 import { IPokeList } from "../types/index.types";
@@ -28,13 +28,8 @@ const initialState: {
     pageSize: 10,
   },
 };
-export const pokemonList = createAsyncThunk(
-  "pokemon/list",
-  async (arg: any) => {
-    const data: IPokeList = await fetchPokemonList(arg.page, arg.limit);
-    return data;
-  }
-);
+
+
 export const pokemonSlice = createSlice({
   name: "pokemon",
   initialState,
@@ -55,10 +50,7 @@ export const pokemonSlice = createSlice({
       state.pagination = {...state.pagination,page: action.payload.page, pageSize:action.payload.pageSize}
 }  },
   extraReducers: (builder) => {
-    builder.addCase(pokemonList.fulfilled, (state: any, action) => {
-      state.list = action.payload;
-    });
-    builder.addCase(HYDRATE, (state, action: any) => {
+    builder.addCase(HYDRATE, (state, action:any) => {
       if(state.pagination.page > action.payload.pokemon.pagination.page){
         return {
           ...state

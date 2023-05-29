@@ -61,7 +61,7 @@ exports[`Card renders the card with correct props 1`] = `
       <p
         class="MuiTypography-root MuiTypography-body2 css-1q3l2w3-MuiTypography-root"
       >
-        Location
+        Location:
         <a
           href="https://pokeapi.co/api/v2/pokemon/25"
           rel="noreffer"

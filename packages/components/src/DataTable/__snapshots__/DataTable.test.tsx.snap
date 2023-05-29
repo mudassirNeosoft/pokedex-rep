@@ -9,7 +9,7 @@ exports[`DataTable calls onRowClick when a row is clicked 1`] = `
       aria-colcount="2"
       aria-multiselectable="false"
       aria-rowcount="3"
-      class="MuiDataGrid-root MuiDataGrid-root--densityStandard MuiDataGrid-withBorderColor css-12u49z-MuiDataGrid-root"
+      class="MuiDataGrid-root MuiDataGrid-root--densityStandard MuiDataGrid-withBorderColor css-1687jxh-MuiDataGrid-root"
       role="grid"
     >
       <div
@@ -458,7 +458,7 @@ exports[`DataTable renders the DataGrid component with correct props 1`] = `
       aria-colcount="2"
       aria-multiselectable="false"
       aria-rowcount="3"
-      class="MuiDataGrid-root MuiDataGrid-root--densityStandard MuiDataGrid-withBorderColor css-12u49z-MuiDataGrid-root"
+      class="MuiDataGrid-root MuiDataGrid-root--densityStandard MuiDataGrid-withBorderColor css-1687jxh-MuiDataGrid-root"
       role="grid"
     >
       <div

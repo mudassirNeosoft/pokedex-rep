@@ -24,3 +24,7 @@ export type IPokemonData = {
   image?:string;
   
 };
+export interface IPageModel {
+  page: number;
+  pageSize: number;
+}
