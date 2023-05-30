@@ -1,5 +1,6 @@
 import { makeGetApiCall } from "../helpers";
-const BASE_URL = "https://pokeapi.co/api/v2/pokemon";
+import { BASE_URL } from "./constants";
+
 export const fetchPokemonList = async (page: number, limit: number = 10) => {
   const res = await makeGetApiCall({
     url: `${BASE_URL}?offset=${page}&limit=${limit}`,
