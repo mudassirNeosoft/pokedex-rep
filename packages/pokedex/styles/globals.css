@@ -32,3 +32,12 @@
   background: var(--color);
   color: #fff;
 }
+
+.back-container{
+  text-align: left;
+  margin: 1rem
+}
+.card-container{
+  display: grid; 
+  place-content: center
+}

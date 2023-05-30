@@ -10,22 +10,22 @@ import { GetServerSideProps } from "next";
 const PokemonDetails = () => {
   const details: IPokemonData | null = useSelector(selectPokemonDetail);
   const router = useRouter();
-
+  const getImageUrl = (id?:number) =>`https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${id}.svg`;
   return (
     <>
-      <div style={{ textAlign: "left", margin: "1rem" }}>
+      <div className="back-container">
         <button className="back" onClick={() => router.back()}>
           BACK
         </button>
       </div>
-      <div style={{ display: "grid", placeContent: "center" }}>
+      <div className="card-container">
         <Card
           name={details?.name ?? ""}
           height={details?.height}
           weight={details?.weight}
           location={details?.location_area_encounters}
           abilities={details?.abilities ?? []}
-          image={`https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${details?.id}.svg`}
+          image={getImageUrl(details?.id)}
         />
       </div>
     </>
