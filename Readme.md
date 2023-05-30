@@ -52,17 +52,17 @@ yarn compile
 yarn build
 
 # production mode
-$ yarn prod
+ yarn prod
 ```
 
 #### Running the app using docker
 
 ```bash
 # building image from base folder
-$ docker build .
+ docker build .
 
 # runnnig the image
-$ docker run -d -p exposedPort:containerPort <imageId>
+ docker run -d -p exposedPort:containerPort <imageId>
 ```
 
 #### Test
@@ -71,7 +71,7 @@ For this project, We chose [Jest](https://facebook.github.io/jest/) as our test 
 
 ```bash
 # unit tests
-$ yarn test
+ yarn test
 
 ```
 
