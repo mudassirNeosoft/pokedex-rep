@@ -21,48 +21,46 @@ To run the Pokemon application locally, you'll need to follow these steps:
 - Typescript
 
 
-### To run Development Environment
-
-
-#### Installation
+### Project Setup
 
 **Install dependencies**
-
-***yarn:***
+- `yarn bootstrap` internally installed the dependencies of parent package.json and then run `lerna bootstrap` so that the dependencies of packages are installed.
 
 ```sh
 yarn bootstrap
 ```
 **Compile packages required for pokedex**
+- `yarn compile` compile the dependent packages i.e. `@pokedex/components` and `@pokedex/utils` with the help of rollup bundler, which is used in `pokedex` nextjs application.
 
 ```sh
 yarn compile
 ```
 
 #### Running the app in development
-
+- `yarn dev` runs the `pokedex` nextjs application in development mode
 ```sh
  yarn dev
 ```
 
 #### Running the app for production
-
+- `yarn build` builds the `pokedex` nextjs application.
+- `yarn prod` run the `pokedex` nextjs application in production mode.
 ```bash
 # building
 yarn build
 
 # production mode
-$ yarn prod
+ yarn prod
 ```
 
 #### Running the app using docker
 
 ```bash
 # building image from base folder
-$ docker build .
+ docker build .
 
 # runnnig the image
-$ docker run -d -p exposedPort:containerPort <imageId>
+ docker run -d -p exposedPort:containerPort <imageId>
 ```
 
 #### Test
@@ -71,7 +69,7 @@ For this project, We chose [Jest](https://facebook.github.io/jest/) as our test 
 
 ```bash
 # unit tests
-$ yarn test
+ yarn test
 
 ```
 
@@ -90,7 +88,4 @@ Yarn is a package manager for JavaScript projects that offers several benefits o
 - [react-scripts](https://github.com/parthdave17/pokedex-mono-repo/blob/main/wiki/npm-modules/react-scripts.md)
 - [redux-toolkit](https://github.com/parthdave17/pokedex-mono-repo/blob/main/wiki/npm-modules/redux-toolkit.md)
 - [next-redux-wrapper](https://github.com/kirill-konshin/next-redux-wrapper)
-
-## Contributing To This Project
-Thank you for considering contributing to this project! Contributions are essential to improving and enhancing the project's functionality and overall quality. Whether you want to fix a bug, implement a new feature, or improve documentation, your efforts are highly valued.
-
+- [Husky](https://typicode.github.io/husky/)
