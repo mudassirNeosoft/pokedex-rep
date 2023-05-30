@@ -26,14 +26,14 @@ To run the Pokemon application locally, you'll need to follow these steps:
 
 #### Installation
 
-**install dependencies**
+**Install dependencies**
 
 ***yarn:***
 
 ```sh
 yarn bootstrap
 ```
-**compile utils and component packages**
+**Compile packages required for pokedex**
 
 ```sh
 yarn compile

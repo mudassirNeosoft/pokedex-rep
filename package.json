@@ -12,14 +12,17 @@
     "lint": "lerna run lint --stream",
     "test": "lerna run test --stream --parallel",
     "dev": "lerna run --scope pokedex dev ",
-    "build": "yarn compile && lerna run --scope pokedex --stream build",
+    "build": "lerna run --scope pokedex --stream build",
     "prod": "lerna run --scope pokedex start ",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lerna-dockerize": "lerna-dockerize"
   },
   "devDependencies": {
     "@types/node": "^20.2.3",
-    "lerna": "^6.6.2",
-    "husky": "^8.0.0"
+    "husky": "^8.0.0",
+    "lerna": "^6.6.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "lerna-dockerize": "^1.0.9"
+  }
 }
